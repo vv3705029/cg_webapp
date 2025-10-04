@@ -31,5 +31,9 @@ app.use("/api/users", userRoutes);
 // ✅ Connect to MongoDB
 connectDB();
 
+app.get("/", (req, res) => {
+  res.redirect("https://cg-webapp.vercel.app/");
+});
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
