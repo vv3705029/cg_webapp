@@ -15,9 +15,13 @@ const app = express();
 
 // ✅ Middleware
 app.use(cors({
-  origin: "https://cg-webapp.vercel.app", // Vite frontend
+  origin: [
+    "http://localhost:5173",         // Local dev
+    "https://cg-webapp.vercel.app"   // Deployed frontend
+  ],
   credentials: true,
 }));
+
 app.use(express.json());
 
 // ✅ Routes
@@ -32,7 +36,11 @@ app.use("/api/users", userRoutes);
 connectDB();
 
 app.get("/", (req, res) => {
-  res.redirect("https://cg-webapp.vercel.app/");
+  if (req.headers.accept && req.headers.accept.includes("text/html")) {
+    res.redirect("https://cg-webapp.vercel.app/");
+  } else {
+    res.json({ message: "Backend API is running 🚀" });
+  }
 });
 
 const PORT = process.env.PORT || 5000;
