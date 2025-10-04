@@ -15,7 +15,7 @@ const app = express();
 
 // ✅ Middleware
 app.use(cors({
-  origin: "http://localhost:5173", // Vite frontend
+  origin: "https://cg-webapp.vercel.app", // Vite frontend
   credentials: true,
 }));
 app.use(express.json());
