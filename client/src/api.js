@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://cg-webapp.onrender.com/api", // Backend base URL
+  baseURL: `${process.env.REACT_APP_API_URL}/api`, // Backend base URL
   withCredentials: true, // Needed to send/receive cookies
 });
 
