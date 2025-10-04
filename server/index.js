@@ -36,11 +36,7 @@ app.use("/api/users", userRoutes);
 connectDB();
 
 app.get("/", (req, res) => {
-  if (req.headers.accept && req.headers.accept.includes("text/html")) {
-    res.redirect("https://cg-webapp.vercel.app/");
-  } else {
-    res.json({ message: "Backend API is running 🚀" });
-  }
+  res.json({ message: "Backend API is running 🚀" });
 });
 
 const PORT = process.env.PORT || 5000;

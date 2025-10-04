@@ -2,10 +2,9 @@ import axios from "axios";
 
 // Create an Axios instance
 const API = axios.create({
-  baseURL: `${import.meta.env.VITE_API_URL}/api`, // Backend base URL
-  withCredentials: true, // Needed to send/receive cookies
+  baseURL: `${import.meta.env.VITE_API_URL}/api`,
+  withCredentials: true,
 });
-
 // --- AUTHENTICATION ENDPOINTS ---
 export const saveQuizResult = (data) => API.post("/quiz", data);
 export const registerUser = (data) => API.post("/users/register", data);
