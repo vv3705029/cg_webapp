@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:5000/api", // Backend base URL
+  baseURL: "https://cg-webapp.onrender.com/api", // Backend base URL
   withCredentials: true, // Needed to send/receive cookies
 });
 
