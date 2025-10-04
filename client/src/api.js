@@ -1,7 +1,8 @@
 import axios from "axios";
 
+// Create an Axios instance
 const API = axios.create({
-  baseURL: `${process.env.REACT_APP_API_URL}/api`, // Backend base URL
+  baseURL: `${import.meta.env.VITE_API_URL}/api`, // Backend base URL
   withCredentials: true, // Needed to send/receive cookies
 });
 
@@ -10,7 +11,7 @@ export const saveQuizResult = (data) => API.post("/quiz", data);
 export const registerUser = (data) => API.post("/users/register", data);
 export const loginUser = (credentials) => API.post("/users/login", credentials);
 
-// --- OTHER ENDPOINTS (Optional) ---
+// --- OTHER ENDPOINTS ---
 export const getMembers = () => API.get("/members");
 export const getStories = () => API.get("/stories");
 export const getGallery = () => API.get("/gallery");
