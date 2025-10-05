@@ -17,7 +17,7 @@ const app = express();
 app.use(cors({
   origin: [
     "http://localhost:5173",         // Local dev
-    "https://cg-webapp.vercel.app"   // Deployed frontend
+    "https://cg-club-nitap.onrender.com"   // Deployed frontend
   ],
   credentials: true,
 }));
